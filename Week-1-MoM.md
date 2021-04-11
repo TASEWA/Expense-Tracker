@@ -4,7 +4,6 @@
 	MoM - April 11th, 2021	2
 	Team Contribution	2
 
-
 # MoM: April 7th, 2021
 
 	Members who met: Athira, Sahana, Lohitha, Sumeghana
@@ -42,11 +41,11 @@
 			* Graph(if possible monthly basis)
 			* Deploy expense tracker
 			* Planned for the walkthroughs:
-		* Walkthrough 1 - April 12, 2021
+	Walkthrough 1 - April 12, 2021
 			* Develop UI pages
 			* Design ER diagram
 			* Navigate to other pages
-		* Walkthrough 2 - April 19, 2021
+	Walkthrough 2 - April 19, 2021
 			* Create DB
 			* Connect UI with database
 			* Walkthrough 3 - April 26, 2021
@@ -82,7 +81,9 @@
 		April 10, 2021
 			Installed the mocha framework and referred tutorials to write unit tests.
 			Worked on test cases for add expense but couldn’t test it out due to errors in node version.
-
+		April 11, 2021
+			Resolved error faced while installing mocha.
+			
 # Sahana
 		April 8, 2021
 			Finished the dashboard page
@@ -90,6 +91,8 @@
 		April 9, 2021
 			Finished the user profile page
 			Created an extra page for the edit user profile functionality
+		April 10, 2021
+			Made some changes to refine the code
 		April 11, 2021
 			Modified dashboard, user profile, welcome, and login pages to add the navigation functionality
 			Learned commands to push/pull code from the repository
@@ -105,7 +108,7 @@
 			Modified the income page using forms. 
 			Referred through a few blog posts regarding javascript unit tests and mocha. 
 		April 11, 2021
-			Completed the navigation, worked on README.md and pushed the code. 
+			Worked on README.md and pushed the code. 
 
 # Sumeghana
 		April 8, 2021
