@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>Income List</title>
+    <link rel="stylesheet" href="income.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Income List</h1>
+      </div>
+      
+      <div id="displayIncomes">
+        <div class="budget-list">
+          <div class="col">
+            <h4>Income Item</h4>
+          </div>
+          <div class="col">
+            <h4>Income Value</h4>
+          </div>
+          <div class="col"></div>
+        </div>
+        <div id="incValue"></div>
+      </div>
+    </div>
+    <div class="toggle">
+      <button id="addBtn" type="button">+</button>
+    </div>
+
+   
+    <div id="myModal" class="modal">
+ 
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Budget Form</h2>
+        </div>
+        <div class="modal-body">
+          <div class="budget-form" id="budgetform">
+            <form id="notifyForm">
+              <p>Click on '+' button to add an income</p>
+              <p>Click on <img src="image/edit.svg" width="15" alt=""  /> to edit an income</p>
+              <p>Click on <img src="image/trash.svg" width="15" alt="" /> to delete an income</p>
+            </form>
+          </div>
+
+          <div class="income-form" id="income-form">
+            <form action="" id="incForm">
+              <div class="">
+                <label for="">please enter your income</label> <br />
+                <input type="text" id="incName" />
+              </div>
+              <div class="">
+                <label for="">please enter income amount</label> <br />
+                <input type="number" id="incNumber" />
+              </div>
+              <button type="submit" id="submitIncen">Add income</button>
+            </form>
+          </div>
+
+          <div class="edit-form" id="editForm">
+            <form action="" id="saveEdit">
+              <div class="">
+                <label for="">Edit your income</label> <br />
+                <input type="text" id="editIncName" />
+              </div>
+              <div class="">
+                <label for="">Edit income amount</label> <br />
+                <input type="number" id="editIncNumber" />
+              </div>
+              <button type="submit">Save changes</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="income.js"></script>
+  </body>
+</html>
