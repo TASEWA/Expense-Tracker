@@ -2,12 +2,13 @@
 <html>
   <head>
     <title>Expense List</title>
-    <link rel="stylesheet" href="/css/expenseliststyle.css" />
+    <link rel="stylesheet" href="../css/expenseliststyle.css" />
   </head>
   <body>
     <div class="container">
       <div class="header">
         <h1>Expense List</h1>
+          
       </div>
       
       <div id="displayExpenses">
@@ -26,8 +27,9 @@
     <div class="toggle">
       <button id="addBtn" type="button">+</button>
     </div>
-    <div>
-      <button onclick="location.href='dashboard.html'" class="box menu">LOGIN</button>
+    <div class = button >
+      <button onclick="location.href='Welcome.html'" class="log-out-button">Log Out</button>
+      <button onclick="location.href='dashboard.html'" class="dashboard-button">Dashboard</button>
     </div>
 
    
@@ -42,8 +44,8 @@
           <div class="budget-form" id="budgetform">
             <form id="notifyForm">
               <p>Click on '+' button to add an expense</p>
-              <p>Click on <img src="image/edit.svg" width="15" alt=""  /> to edit an expense</p>
-              <p>Click on <img src="image/trash.svg" width="15" alt="" /> to delete an expense</p>
+              <p>Click on <img src="../image/edit.svg" width="15" alt=""  /> to edit an expense</p>
+              <p>Click on <img src="../image/trash.svg" width="15" alt="" /> to delete an expense</p>
             </form>
           </div>
 
@@ -77,6 +79,6 @@
         </div>
       </div>
     </div>
-    <script src="expenselist.js"></script>
+    <script src="../js/expenselist.js"></script>
   </body>
 </html>
