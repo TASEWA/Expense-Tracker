@@ -25,6 +25,8 @@ Considering the above, we decided that something needs to be done about these is
   <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1302&q=80" width="550" title="hover text">
 </p>
 
+# Technology Stack -
+
 * Web Application technology
 * JavaScript
 * PostgreSQL
