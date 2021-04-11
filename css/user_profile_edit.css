@@ -1,0 +1,15 @@
+.profile-forms{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-input{
+    margin:10px;
+}
+
+.submit-button{
+    margin: 20px;
+    padding: 5px 24px;
+}

@@ -1,0 +1,46 @@
+.wrapper-grid{
+    display: grid;
+    text-align: center;
+    grid-gap: 10px;
+}
+
+.wrapper-flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+.grid-menu{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 100px; 
+}
+
+.grid-current{
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px 10px;
+    grid-gap: 10px;
+}
+
+.log-out-button
+{
+    margin-right: 40px;
+    padding: 10px 24px;
+    position: absolute; right: 0;
+}
+
+.box{
+    margin: 10px;
+    padding: 25px;
+}
+
+.menu{
+    background-color: rgb(207,232,220);   
+}
+
+.current{
+    background-color: rgb(135, 182, 190);
+}
+
+.balance{
+    background-color: rgb(158, 205, 243);;
+}
+

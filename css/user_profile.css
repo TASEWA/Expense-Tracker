@@ -1,0 +1,30 @@
+.wrapper-flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+.dashboard-button
+{
+    display: inline-block;
+    margin-top: 50px;
+    margin-right: 30px;
+    padding: 10px 24px;
+    position: absolute; right: 0;
+}
+
+.profile{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.user-info{
+    margin:10px;
+}
+
+.edit-button{
+    display: block;
+    padding: 5px 24px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
