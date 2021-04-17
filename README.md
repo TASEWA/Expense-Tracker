@@ -8,17 +8,16 @@ Introducing Expense Tracker:pencil::green_book:, an application to track your da
 </p>
 
 # About -
-If you don’t track your expenses during the year, you’ll have to look for information and take time to find out what you spent your money on. It will be an additional job that takes up a lot of time; time that could have otherwise been used for other crucial tasks. People usually fail to properly manage their expenses, since they don’t have time nor the means to efficiently keep track of how they spend. If you can track your expenses all the time, you won’t have to immerse yourself in tax reporting. Moreover, when people ignore from constantly planning their finances, they often live in debt or from one salary to another.
-Considering the above, we decided that something needs to be done about these issues. If you can track everything in an expense tracker application, it will help you think more about spending money wisely and not ignoring the inflow and outflow of funds.
+If you don’t track your expenses during the year, you’ll have to look for your previous statistics and it would cost you a lot of time to find out what you spent your money on. People usually fail to properly manage their expenses, since they don’t have time nor the means to efficiently keep track of how they spend. If you can totally track your expenses all the time, you won’t have to immerse yourself in tax reporting. Moreover, when people ignore their constant planning of their finances, there is every possibility of getting into a debt trap.Considering the above set of circumstances, we decided that something needs to be done inorder to efficiently track the expenses and help people in saving time. If you can track everything in an expense tracker application, it will help you think more about spending money wisely and not ignoring the inflow and outflow of funds.
 
 # Features -
 * Login/Sign Up Subsystem
 * Expense Tracker Subsystem
 	* Expense page - user can add, edit, or delete expense items from the expense list
 	* Income page -  user can add, edit, or delete expense items from the expense list
-* Graph Subsystem - users can view a pie chart of their expenses 
+* Graph Subsystem - users can view a pie chart of their expenses
 * Dashboard to integrate all the subsystems together
-* The user can view the total income, expenses as well as the balance amount here as well
+* The user can view the total income, total expenses and balance amount here as well
 
 
 <p align="center">
