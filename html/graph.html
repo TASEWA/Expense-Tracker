@@ -1,47 +1,61 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
-  <meta charset="UTF-8">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.js"></script>
-  
-  <title>PIE chart</title>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.js"></script>
+
+    <title>PIE chart</title>
 </head>
+
 <body>
-  <div class="container">
-	<h2><center>PIE chart</center></h2>
-    <canvas id="barChart" width="400" height="500"></canvas>
-	
-  </div>
+    <div>
+        <div>
+            <h3>Welcome, User!</h3>
+            <div class=button>
+                <button onclick="location.href='Welcome.html'" class="log-out-button">Log Out</button>
+                <button onclick="location.href='dashboard.html'" class="dashboard-button">Dashboard</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2>
+                <center>PIE chart</center>
+            </h2>
+            <canvas id="barChart" width="400" height="500"></canvas>
+
+        </div>
 </body>
+
 </html>
 <script type="text/javascript">
-$(document).ready(function(){
-	var chartDiv = $("#barChart");
-var myChart = new Chart(chartDiv, {
-    type: 'pie',
-    data: {
-        labels: ["Groceries", "Electricity", "SchoolFee", "Shopping", "Others"],
-        datasets: [
-        {
-            data: [3300, 1439, 5500, 4500, 2800],
-            backgroundColor: [
-               "#FF6384",
-            "#4BC0C0",
-            "#FFCE56",
-            "#E7E9ED",
-            "#36A2EB"
-            ]
-        }]
-    },
-    options: {
-        title: {
-            display: true,
-            text: 'Pie Chart'
-        },
-		responsive: true,
-maintainAspectRatio: false,
-    }
-});
-});
+    $(document).ready(function () {
+        var chartDiv = $("#barChart");
+        var myChart = new Chart(chartDiv, {
+            type: 'pie',
+            data: {
+                labels: ["Groceries", "Electricity", "SchoolFee", "Shopping", "Others"],
+                datasets: [
+                    {
+                        data: [3300, 1439, 5500, 4500, 2800],
+                        backgroundColor: [
+                            "#FF6384",
+                            "#4BC0C0",
+                            "#FFCE56",
+                            "#E7E9ED",
+                            "#36A2EB"
+                        ]
+                    }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Pie Chart'
+                },
+                responsive: true,
+                maintainAspectRatio: false,
+            }
+        });
+    });
 </script>
