@@ -112,14 +112,14 @@
 
 # Sumeghana
 		April 8, 2021
-			Referred tutorials on HTML and CSS
 			Started designing user signup page
+			Finsihed designing signup page
 		April 9, 2021
-			Finished designing user signup and login pages
+			Finished designing welcome and login pages
 		April 10, 2021
-			Referred tutorials on HTML and CSS
-			Referred blogs on Unit test cases
+			Started working on Design Diagram
+			Modified welcome,login,signup pages to add the navigation functionality
 		April 11, 2021
-			Referred blogs on design diagram, updated MoM and pushed the code. 
+			Referred and Learnt how to use github and pushed the code. 
 
 
