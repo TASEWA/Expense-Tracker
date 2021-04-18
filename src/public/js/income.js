@@ -74,8 +74,8 @@ function displayInc(details) {
       <div id="incValueAmount" class="inc"><p> <span>$ </span> ${details[i].number}</p></div>
       <div id="edite_delete">
         <p>
-          <button id="${details[i].id}" onclick="editIncDetails(${details[i].id})"> <img src="image/edit.svg" width="15" alt=""  /></button> 
-          <button id="${details[i].id}" onclick="delIncomeDetails(${details[i].id})"><img src="image/trash.svg" width="15" alt="" /></button>
+          <button id="${details[i].id}" onclick="editIncDetails(${details[i].id})"> <img src="../image/edit.svg" width="15" alt=""  /></button> 
+          <button id="${details[i].id}" onclick="delIncomeDetails(${details[i].id})"><img src="../image/trash.svg" width="15" alt="" /></button>
         </p>
       </div>
     </div>
