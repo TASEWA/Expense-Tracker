@@ -55,10 +55,15 @@
 
 	Members who met: Athira, Sahana, Lohitha, Sumeghana
 	Duration: 2hrs 30 mins
-			* Reviewed and discussed minor doubts had in individual work
-			* Updated the path of directories
-			* Discussed least priorities tasks set this week and how to proceed with the same.
-			* Pushed code into repository
+		* Reviewed and discussed minor doubts had in individual work
+		* Updated the path of directories
+		* Discussed least priorities tasks set this week and how to proceed with the same.
+		* Pushed code into repository
+
+# MoM - April 20th, 2021
+	Members who met: Sahana, Lohitha, Sumeghana
+	Duration: 1hr
+		* Updated the design diagram
 			
 # Team Contribution 
 
@@ -82,8 +87,6 @@
 			Started working on Restful API.
 			
 # Sahana
-		April 15, 2021
-			Wrote MoM for today’s meeting
 		April 16. 2021
 			Referred to resources related to PostgreSQL, and its connection to a server
 			Read about Postman, Node.js, and Express.js
