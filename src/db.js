@@ -4,12 +4,12 @@ const Pool=require("pg").Pool;
 const pool=new Pool({
     user: "postgres",
     password:"vector4",
-    host: "localhost",
     database: "EXPENSETRACER-TASEWA",
-    port:5432
+    host: "localhost",
+    port: 5432
 });
 
 //configuring where db is located
 
-module.exports=pool;
+module.exports = pool;
 //setting this up and to run queries
