@@ -91,5 +91,14 @@
 			Updated UI for the welcome, sign up and login pages - fixed the styling that got messed up when adding the navigation functionality
 			Pushed the updated code into the repository. 
 
-			
+# Lohitha
+		April 14, 2021
+			Finalised to work on express.js server and PostgreSQL.
+			Referred a few documentations.
+		April 16, 2021
+			Worked and implemented express.js part.
+		April 17,2021
+			Pushed the code to the repository and updated income.js file.
+		April 19,2021
+			Referred a few tutorials on Restful API and Unit testing.			
 
