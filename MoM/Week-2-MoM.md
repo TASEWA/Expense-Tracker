@@ -102,3 +102,18 @@
 		April 19,2021
 			Referred a few tutorials on Restful API and Unit testing.			
 
+# Sumeghana
+		
+		April 15, 2021
+			Reffered tutorials on Mysql and Postgresql
+		April 16, 2021
+			Had to install PostgreSQL and setup Pgadmin
+			Created tables on income,expense,expense_tracker
+			inserted queries and gave edit,delete queries
+		April 17,2021
+			Organised the code in repository and pushed the queries.
+			Referred tutorials on Database Testing (pgTap and JMeter)
+                April 18,2021
+			Reffered tutorials on JavaScript Unit Testing
+			Reffered blogs on Mocha JS and Chai
+ 
