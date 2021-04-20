@@ -81,4 +81,15 @@
 			Worked on connecting postgreSQL with express.js server
 			Started working on Restful API.
 			
+# Sahana
+		April 15, 2021
+			Wrote MoM for today’s meeting
+		April 16. 2021
+			Referred to resources related to PostgreSQL, and its connection to a server
+			Read about Postman, Node.js, and Express.js
+		April 17, 2021
+			Updated UI for the welcome, sign up and login pages - fixed the styling that got messed up when adding the navigation functionality
+			Pushed the updated code into the repository. 
+
+			
 
