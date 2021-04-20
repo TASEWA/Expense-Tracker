@@ -1,8 +1,9 @@
 # Table of Contents
-	MoM - April 15th, 2021	1
-	MoM - April 16th, 2021	1
-	MoM - April 17th, 2021	2
-	Team Contribution	2
+	MoM - April 15th, 2021	
+	MoM - April 16th, 2021	 
+	MoM - April 17th, 2021	
+	Mom - April 20th,2021   
+	Team Contribution	3
 
 # MoM: April 15th, 2021
 
@@ -64,6 +65,13 @@
 	Members who met: Sahana, Lohitha, Sumeghana
 	Duration: 1hr
 		* Updated the design diagram
+#Mom - April 20th,2021
+	Members who met: Sumeghana, Athira, Lohitha, Sahana
+	Duration : 4hr
+		* Connected server to Database.
+		* Wrote the code for Restful APIs and Routed it.
+		* Tested the Server and Database Connection with Postman.
+		* Pushed code to Seperate Unit_Testing Repository.
 			
 # Team Contribution 
 
@@ -118,5 +126,7 @@
 			Referred tutorials on Database Testing (pgTap and JMeter)
                April 18,2021
 			Reffered tutorials on JavaScript Unit Testing
-			Reffered blogs on Mocha JS and Chai
- 
+			Reffered blogs on Mocha JS ,Chai and Postman
+ 	       April 20, 2021
+	       		Worked on Design Diagram
+			Tested Server and Database Connection with Postman
