@@ -65,7 +65,7 @@
 	Members who met: Sahana, Lohitha, Sumeghana
 	Duration: 1hr
 		* Updated the design diagram
-#Mom - April 20th,2021
+# Mom - April 20th,2021
 	Members who met: Sumeghana, Athira, Lohitha, Sahana
 	Duration : 4hr
 		* Connected server to Database.
