@@ -2,10 +2,10 @@ const Pool=require("pg").Pool;
 //allows to incent this pool and configure it like where and how we are gonna connect to db
 
 const pool=new Pool({
-    user: " ",
-    password:"",
+    user: "postgres ",
+    password:"7337",
     host: "localhost",
-    database: " ",
+    database: "EXPENSETRACER-TASEWA ",
     port:5432
 });
 
