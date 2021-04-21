@@ -63,8 +63,9 @@
 
 # MoM - April 20th, 2021
 	Members who met: Sahana, Lohitha, Sumeghana
-	Duration: 1hr
+	Duration: 2hr
 		* Updated the design diagram
+	
 # Mom - April 20th,2021
 	Members who met: Sumeghana, Athira, Lohitha, Sahana
 	Duration : 4hr
@@ -100,7 +101,9 @@
 			Read about Postman, Node.js, and Express.js
 		April 17, 2021
 			Updated UI for the welcome, sign up and login pages - fixed the styling that got messed up when adding the navigation functionality
-			Pushed the updated code into the repository. 
+			Pushed the updated code into the repository.
+		April 20, 2021
+			Updated the design diagram
 
 # Lohitha
 		April 14, 2021
