@@ -13,18 +13,18 @@ app.get('/', (req, res) => {
     res.send('Crashed!');
 });
 
-pp.get('/list',async(req,res)=>{
-    try {
-    
-    const expdetails=await pool.query("SELECT * FROM Expense");
-    res.json(expdetails);
-    } catch (error) {
-    console.error(err.message);
-    }
-    });
+app.get('/list',async(req,res)=>{
+  try {
+  
+  const expdetails=await pool.query("SELECT * FROM Expense");
+  res.json(expdetails);
+  } catch (error) {
+  console.error(err.message);
+  }
+  });
 //get
 
-app.post("/list", async(req, res) => {
+app.post('/list', async(req, res) => {
     try {
         const { Expense_item } = req.body;
         const { Expense_amount } = req.body;
@@ -38,22 +38,18 @@ app.post("/list", async(req, res) => {
 //post
 
 
-app.delete("/list", async(req, res) => {​​​​​
+app.delete('/list', async(req, res) => {​​​​​
     try {​​​​​
-        const {​​​​​ id }​​​​​ = req.params;
         const {​​​​​ expense_id }​​​​​ = req.params;
-        const {​​​​​ expense_amount }​​​​​ = req.params;
-        const {​​​​​ expense_item }​​​​​ = req.params;
-        const {​​​​​ expense_date }​​​​​ = req.params;
-        const deleteexpense = awaitpool.query("DELETE FROM Expense WHERE expense_id = $1", [id]);
+        const deleteexpense = await pool.query("DELETE FROM Expense WHERE expense_id = $1", [expense_id]);
         res.json("Deleted!");
     }​​​​​ catch (err) {​​​​​
         console.log(err.message);
     }​​​​​
 }​​​​​);
-​//delete
+​
 
-app.put("/list", async (req, res) => {
+app.put('/list', async (req, res) => {
     try {
       const { id } = req.params;
       const { Expense_amount } = req.body;
@@ -61,9 +57,6 @@ app.put("/list", async (req, res) => {
         "UPDATE list SET Expense_amount = $1 WHERE Expense_id = $2",
         [Expense_amount, id]
       );
-  
-   
-  
       res.json("updated!");
     } catch (err) {
       console.error(err.message);
