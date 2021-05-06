@@ -18,7 +18,7 @@
         </div>
 
         <div>
-            <h3>Welcome, Percy!</h3>
+            <h3>Welcome!</h3>
             <button onclick="location.href='Welcome.html'" class="log-out-button">Log Out</button>
         </div>
     </div>
@@ -26,9 +26,9 @@
     <hr>
 
     <div class="wrapper-grid grid-current">
-        <div class="box current">Current Income: $1000</div>
-        <div class="box balance">Current Balance: $100</div>
-        <div class="box current">Current Expense: $900</div>
+        <div class="box current" id='total_income'>Current Income: $</div>
+        <div class="box balance" id="curr_balance">Current Balance: $</div>
+        <div class="box current" id="total_expense">Current Expense: $</div>
     </div>
 
     <hr>
@@ -39,6 +39,9 @@
         <button onclick="location.href='expenselist.html'" class="box menu">Expense List</button>
         <button onclick="location.href='graph.html'" class="box menu">View Graph</button>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../js/dashboard.js"></script>
 
 </body>
 
