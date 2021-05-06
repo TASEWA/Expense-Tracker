@@ -1,13 +1,13 @@
-const Pool=require("pg").Pool;
+var mysql = require('mysql')
 //allows to incent this pool and configure it like where and how we are gonna connect to db
 
-const pool=new Pool({
-    user: "postgres",
-    password:"vector4",
-    database: "EXPENSETRACER-TASEWA",
+var pool = mysql.createConnection({
+    user: "root",
+    password:"secret",
+    database: "expense_tracker",
     host: "localhost",
-    port: 5432
-});
+    port: 3306
+})
 
 //configuring where db is located
 
