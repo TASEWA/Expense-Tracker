@@ -1,24 +1,24 @@
-CREATE TABLE Expense( 			
+CREATE TABLE expense( 			
 					 id int ,
-					 Expense_id serial  primary key,
-				    	 Expense_item char(20) not null,
-					 Expense_amount char(10)  not null,
-					 Expense_Date DATE not null,
-					foreign key (id) references UserProfile(id)
+					 expense_id serial  primary key,
+				    	 item varchar(20),
+					 amount numeric(11, 2),
+					 expense_date DATE,
+					foreign key (id) references userProfile(id)
 				  );
 
-CREATE TABLE Income( 			 
+CREATE TABLE income( 			 
 					 id int ,
-					 Income_id serial  primary key,
-				    	 Income_item char(20) not null,
-					 Income_amount char(10) not null,
-					 Income_Date DATE not null,
-					foreign key (id) references UserProfile(id)
+					 income_id serial  primary key,
+				    	 item varchar(20),
+					 amount numeric(11, 2),
+					 income_date DATE,
+					foreign key (id) references userProfile(id)
 				  );
-CREATE TABLE Expense_Tracker (   
+CREATE TABLE expense_tracker (   
 					      id int ,
-				              Total_income int ,
-					      Total_expense int ,
-					      Total_balance int ,
-	                          foreign key (id) references UserProfile(id)
+				              total_income numeric(11, 2),
+					      Total_balance numeric(11, 2),
+					      Total_expense numeric(11, 2),
+	                          foreign key (id) references userProfile(id)
 				             );

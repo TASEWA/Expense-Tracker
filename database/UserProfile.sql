@@ -1,8 +1,8 @@
-CREATE TABLE UserProfile (   
-					id numeric(20) unique,
-				    Name char(20)  ,
-				     Username varchar(20) null,
-				    Password varchar(20) ,
-				    Email_Id varchar(50) unique , 
+CREATE TABLE userProfile (   
+					id numeric(11),
+				    name char(20)  ,
+				     username varchar(20),
+				    password varchar(20),
+				    email varchar(20), 
 					primary key(id)
 				  );

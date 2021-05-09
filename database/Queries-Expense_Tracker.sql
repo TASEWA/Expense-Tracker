@@ -1,2 +1,2 @@
-insert into Expense_Tracker values ('1','370000','352000','12000');
+insert into expense_tracker (id, total_income, total_balance, total_expense) values (1, 370000, 12000, 352000);
 							
