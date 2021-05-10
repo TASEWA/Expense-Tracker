@@ -20,7 +20,7 @@
         </div>
 
         <div>
-            <h3>Welcome, Percy!</h3>
+            <h3>Welcome!</h3>
             <button onclick="location.href='Welcome.html'" class="log-out-button">Log Out</button>
             <button onclick="location.href='dashboard.html'" class="dashboard-button">Dashboard</button>
         </div>
@@ -33,27 +33,30 @@
 
         <div class="user-info">
             <h4 style="display: inline;">Name:</h4>
-            <p style="display: inline;">Percy Jackson</p>
+            <p style="display: inline;" id="name"></p>
         </div>
 
         <div class="user-info">
             <h4 style="display: inline;">Username:</h4>
-            <p style="display: inline;">percyj</p>
+            <p style="display: inline;" id="username"></p>
         </div>
 
         <div class="user-info">
             <h4 style="display: inline;">Password:</h4>
-            <p style="display: inline;">abc123xyz</p>
+            <p style="display: inline;" id="password"></p>
         </div>
 
         <div class="user-info">
             <h4 style="display: inline;">Email:</h4>
-            <p style="display: inline;">percyj@gmail.com</p>
+            <p style="display: inline;" id="email"></p>
         </div>
 
     </div>
 
     <button onclick="location.href='user_profile_edit.html'" class="edit-button">Edit</button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../js/user_profile.js"></script>
 
 </body>
 
