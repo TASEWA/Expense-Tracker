@@ -15,7 +15,6 @@ app.get('/', (req, res) => {
 });
 
 app.get('/list', function(req, res, next) {
-	pool.connect();
 
 	pool.query('SELECT * FROM expense', function(error, results, fields){
 		res.send(results);
@@ -23,7 +22,6 @@ app.get('/list', function(req, res, next) {
 });
 
 app.get('/get_expense_tracker_details', function(req, res, next) {
-	pool.connect();
 
 	pool.query('SELECT * FROM expense_tracker', function(error, results, fields){
 		res.send(results);
@@ -31,9 +29,13 @@ app.get('/get_expense_tracker_details', function(req, res, next) {
 
 });
 
-app.post('/post_user_details', async function(req, res, next) {
+app.get('/get_user_details', function(req, res, next) {
 
-	pool.connect();
+	pool.query('SELECT * FROM userProfile WHERE id = 3', function(error, results, fields){
+		res.send(results);
+	});
+
+app.post('/post_user_details', async function(req, res, next) {
 
 	const { name } = req.body;
         const { username } = req.body;
