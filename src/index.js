@@ -34,6 +34,7 @@ app.get('/get_user_details', function(req, res, next) {
 	pool.query('SELECT * FROM userProfile WHERE id = 3', function(error, results, fields){
 		res.send(results);
 	});
+});
 
 app.post('/post_user_details', async function(req, res, next) {
 
