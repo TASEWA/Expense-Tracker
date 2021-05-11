@@ -54,4 +54,21 @@ app.post('/post_user_details', async function(req, res, next) {
 	});
 });
 
+app.post('/post_expense_details', async function(req, res, next) {
+
+	const { item } = req.body;
+    const { amount } = req.body;
+
+	let sql = 'UPDATE userProfile set item = ?, amount = ? where id = 6';
+
+	await pool.query(sql, [item, amount], function(error, results, fields)
+	{
+  		if (error)
+    			return console.error(error.message);
+  		
+  		console.log('Rows affected:', results.affectedRows);
+	});
+})
+
+
 app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
