@@ -159,4 +159,19 @@ app.post('/delete_income', async function(req, res, next) {
 	});
 });
 
+app.get('/get_total_expense' , async function(req, res, next) {
+
+	pool.query('update expense_tracker set total_expense = (select sum(amount) from expense)', function(error, results, fields){
+		res.send(results);
+	});
+
+});
+
+app.get('/get_expense_graph_details', function(req, res, next) {
+
+	pool.query('SELECT * FROM expense', function(error, results, fields){
+		res.send(results);
+	});
+});
+
 app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
