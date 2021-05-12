@@ -12,6 +12,7 @@
 <body>
     <div>
         <div>
+            <h3>Welcome, User!</h3>
             <div class=button>
                 <button onclick="location.href='Welcome.html'" class="log-out-button">Log Out</button>
                 <button onclick="location.href='dashboard.html'" class="dashboard-button">Dashboard</button>
@@ -22,7 +23,7 @@
             <h2>
                 <center>PIE chart</center>
             </h2>
-            <canvas id="barChart" width="400" height="500"></canvas>
+            <canvas id="barChart" width="200" height="200"></canvas>
 
         </div>
 </body>
@@ -30,21 +31,41 @@
 </html>
 <script type="text/javascript">
     $(document).ready(function () {
+
+        var names = [];
+        var val = [];
+        var colours = [];
+        var c = ["#FF6384", "#4BC0C0", "#FFCE56", "#E7E9ED", "#36A2EB", "#AF6384", "#BBC380", "#A88000", "#DDDDDD", "#A6AAAB", "#44438F", "#BBC0BB", "#DDCE5A", "#E7ABEC", "#AF6384",
+            "#4B40C0", "#654321", "#123456", "#36AA67", "#333333"]
+
+        $.ajax(
+            {
+                type: 'GET',
+                url: '/get_expense_graph_details',
+                datatype: 'JSON',
+                success: function (result) {
+                    for (i = 0; i < result.length; i++) {
+                        names.push(result[i].item);
+                        val.push(result[i].amount);
+
+                        //var c = '#' + Math.floor(Math.random() * 16777215).toString(16);
+
+                        colours.push(c[i]);
+                    }
+                }
+            });
+
+        console.log(names);
+
         var chartDiv = $("#barChart");
         var myChart = new Chart(chartDiv, {
             type: 'pie',
             data: {
-                labels: ["Groceries", "Electricity", "SchoolFee", "Shopping", "Others"],
+                labels: names,
                 datasets: [
                     {
-                        data: [3300, 1439, 5500, 4500, 2800],
-                        backgroundColor: [
-                            "#FF6384",
-                            "#4BC0C0",
-                            "#FFCE56",
-                            "#E7E9ED",
-                            "#36A2EB"
-                        ]
+                        data: val,
+                        backgroundColor: colours
                     }]
             },
             options: {
