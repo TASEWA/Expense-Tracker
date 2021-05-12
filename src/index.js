@@ -29,6 +29,12 @@ app.get('/get_expense_tracker_details', function(req, res, next) {
 
 });
 
+app.get('/get_income_details',function(req,res,next){
+	pool.query('SELECT * FROM income' , function(error, results, fields){
+		res.send(results);
+	});
+});
+
 app.get('/get_user_details', function(req, res, next) {
 
 	pool.query('SELECT * FROM userProfile WHERE id = 3', function(error, results, fields){
@@ -72,6 +78,21 @@ app.post('/post_expense_details', async function(req, res, next) {
 	});
 })
 
+app.post('/post_Income_details', async function(req, res, next) {
+	const { id } =req.body;
+	const { name } = req.body;
+	const { number } = req.body;
+	const { date } = req.body;
+	
+	let sql = 'INSERT INTO income values (?, ?, ?, ?, ?)';
+	
+	await pool.query(sql,['3', id, name, number, date],function(error,results,fields){
+		if(error)
+			return console.error(error.message);
+		
+		console.log('Rows affected:',results.affectedRows);
+	});
+})
 app.post('/update_expense_details', async function(req, res, next) {
 
 	
@@ -90,6 +111,24 @@ app.post('/update_expense_details', async function(req, res, next) {
 	});
 });
 
+app.post('/update_income', async function(req, res, next){
+	
+	const{ id }= req.body;
+	const{ name } = req.body;
+	const { number } = req.body;
+	
+	let sql = 'UPDATE income SET item = ?, amount = ? WHERE income_id = '?';
+	
+	await pool.query(sql, [name, number, id], function(error, results, fields)
+	{
+		if(error)
+			return console.error(error.message);
+		
+		console.log('Rows affected:', results.affectedRows);
+	});
+	
+	
+	
 app.post('/delete_expense', async function(req, res, next) {
 	
 	const { id } = req.body;	
@@ -105,5 +144,19 @@ app.post('/delete_expense', async function(req, res, next) {
 	});
 });
 
+app.post('/delete_income', async function(req, res, next) {
+	
+	const { id }=req.body;
+	
+	let sql= 'DELETE FROM income WHERE income_id=?';
+	
+	await pool.query(sql,[id], function(error, results,fields)
+	{
+		if(error)
+			return console.error(error.message);
+		
+		console.log('Rows affected:', results.affectedRows);
+	});
+});
 
 app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
