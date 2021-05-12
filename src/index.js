@@ -56,12 +56,14 @@ app.post('/post_user_details', async function(req, res, next) {
 
 app.post('/post_expense_details', async function(req, res, next) {
 
-	const { item } = req.body;
-    const { amount } = req.body;
+	const { id } = req.body;	
+	const { name } = req.body;
+    	const { number } = req.body;
+	const { date } = req.body;
 
-	let sql = 'UPDATE userProfile set item = ?, amount = ? where id = 6';
+	let sql = 'INSERT INTO expense values (?, ?, ?, ?, ?)';
 
-	await pool.query(sql, [item, amount], function(error, results, fields)
+	await pool.query(sql, ['3', id, name, number, date], function(error, results, fields)
 	{
   		if (error)
     			return console.error(error.message);
@@ -69,6 +71,39 @@ app.post('/post_expense_details', async function(req, res, next) {
   		console.log('Rows affected:', results.affectedRows);
 	});
 })
+
+app.post('/update_expense_details', async function(req, res, next) {
+
+	
+	const { id } = req.body;	
+	const { name } = req.body;
+    	const { number } = req.body;
+
+	let sql = 'UPDATE expense SET item = ?, amount = ? WHERE expense_id = ?';
+
+	await pool.query(sql, [name, number, id], function(error, results, fields)
+	{
+  		if (error)
+    			return console.error(error.message);
+  		
+  		console.log('Rows affected:', results.affectedRows);
+	});
+});
+
+app.post('/delete_expense', async function(req, res, next) {
+	
+	const { id } = req.body;	
+
+	let sql = 'DELETE FROM expense WHERE expense_id = ?';
+
+	await pool.query(sql, [id], function(error, results, fields)
+	{
+  		if (error)
+    			return console.error(error.message);
+  		
+  		console.log('Rows affected:', results.affectedRows);
+	});
+});
 
 
 app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
