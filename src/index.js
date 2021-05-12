@@ -42,6 +42,14 @@ app.get('/get_user_details', function(req, res, next) {
 	});
 });
 
+app.get('/get_total_income' , async function(req, res, next) {
+
+	pool.query('update expense_tracker set total_income = (select sum(amount) from income)', function(error, results, fields){
+		res.send(results);
+	});
+
+});
+
 app.post('/post_user_details', async function(req, res, next) {
 
 	const { name } = req.body;
