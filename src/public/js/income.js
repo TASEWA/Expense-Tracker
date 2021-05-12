@@ -99,10 +99,21 @@ $(document).ready(function () {
 
         }
       });
-
+    totalincome();
     displayIncomes.style.display = "block";
   }
 
+   function totalincome() {
+    $.ajax(
+      {
+        type: 'GET',
+        url: '/get_total_income',
+        datatype: 'JSON',
+        success: function (result) {
+          console.log(result);
+        }
+      });
+  }
 
   function delIncomeDetails(id) {
     userInc = { "id": id };
