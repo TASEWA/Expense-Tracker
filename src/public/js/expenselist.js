@@ -150,8 +150,6 @@ $(document).ready(function () {
       number: editExpNumber,
     };
 
-    console.log(JSON.stringify(data));
-
     $.ajax(
       {
         type: 'POST',
