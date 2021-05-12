@@ -42,6 +42,14 @@ app.get('/get_user_details', function(req, res, next) {
 	});
 });
 
+app.post('/update_balance', function(req, res, next) {
+	const {bal} = req.body;
+
+	pool.query('UPDATE expense_tracker SET total_balance = ?', [bal], function(error, results, fields){
+		res.send(results);
+	});
+});
+
 app.get('/get_total_income' , async function(req, res, next) {
 
 	pool.query('update expense_tracker set total_income = (select sum(amount) from income)', function(error, results, fields){
@@ -50,13 +58,13 @@ app.get('/get_total_income' , async function(req, res, next) {
 
 });
 app.post('/post_account_user_details', async function(req, res, next) {
-
+	
 	const { name } = req.body;
         const { username } = req.body;
         const { password } = req.body;
 	const { email } = req.body;
 
-	let sql = 'INSERT into  userProfile values name = ?, username = ?, password = ?, email = ?';
+	let sql = 'INSERT into  userProfile (id, name, username, password, email) VALUES ((SELECT count(*)+1 FROM userProfile), ?, ?, ?)';
 
 	await pool.query(sql, [name, username, password, email], function(error, results, fields)
 	{
@@ -73,7 +81,7 @@ app.post('/post_credentials', async function(req, res, next) {
         const { username } = req.body;
         const { password } = req.body;
 	
-	let sql = 'SELECT * FROM userProfile where username = ?, password = ?';
+	let sql = 'SELECT * FROM userProfile where username = ? and password = ?';
 
 	await pool.query(sql, [ username, password], function(error, results, fields)
 	{
