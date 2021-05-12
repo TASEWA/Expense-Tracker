@@ -49,6 +49,40 @@ app.get('/get_total_income' , async function(req, res, next) {
 	});
 
 });
+app.post('/post_account_user_details', async function(req, res, next) {
+
+	const { name } = req.body;
+        const { username } = req.body;
+        const { password } = req.body;
+	const { email } = req.body;
+
+	let sql = 'INSERT into  userProfile values name = ?, username = ?, password = ?, email = ?';
+
+	await pool.query(sql, [name, username, password, email], function(error, results, fields)
+	{
+  		if (error)
+    			return console.error(error.message);
+  		
+  		console.log('Rows affected:', results.affectedRows);
+	});
+});
+
+app.post('/post_credentials', async function(req, res, next) {
+
+	
+        const { username } = req.body;
+        const { password } = req.body;
+	
+	let sql = 'SELECT * FROM userProfile where username = ?, password = ?';
+
+	await pool.query(sql, [ username, password], function(error, results, fields)
+	{
+  		if (error)
+    			return console.error(error.message);
+  		
+  		console.log('Rows affected:', results.affectedRows);
+	});
+});
 
 app.post('/post_user_details', async function(req, res, next) {
 
