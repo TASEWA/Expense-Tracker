@@ -117,7 +117,7 @@ app.post('/update_income', async function(req, res, next){
 	const{ name } = req.body;
 	const { number } = req.body;
 	
-	let sql = 'UPDATE income SET item = ?, amount = ? WHERE income_id = '?';
+	let sql = 'UPDATE income SET item = ?, amount = ? WHERE income_id = ?';
 	
 	await pool.query(sql, [name, number, id], function(error, results, fields)
 	{
@@ -127,7 +127,7 @@ app.post('/update_income', async function(req, res, next){
 		console.log('Rows affected:', results.affectedRows);
 	});
 	
-	
+});
 	
 app.post('/delete_expense', async function(req, res, next) {
 	
