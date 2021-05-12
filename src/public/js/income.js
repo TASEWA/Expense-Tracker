@@ -1,3 +1,5 @@
+$(document).ready(function () {
+
 const modal = document.getElementById("myModal");
 const btn = document.getElementById("addBtn");
 const span = document.getElementsByClassName("close")[0];
@@ -39,7 +41,7 @@ let incName = document.getElementById("incName");
 let incNumber = document.getElementById("incNumber");
 let id = 0;
 let details = [];
-
+displayInc();
 
 function addIncomes(name, number) {
   if (!name.length || !number.length) {
@@ -57,71 +59,114 @@ function addIncomes(name, number) {
       name: name,
       number: parseInt(number),
     };
-    details.push(userInc);
-    displayInc(details);
+    $.ajax({
+        type: 'POST',
+        url: '/post_income_details',
+        contentType: 'application/json',
+        data: JSON.stringify(userInc)
+      });
+    displayInc();
     id++;
     incName.value = "";
     incNumber.value = "";
   }
 }
 
-function displayInc(details) {
+function displayInc() {
   incValue.innerHTML = null;
-  for (i = 0; i < details.length; i++) {
+  $.ajax(
+      {
+        type: 'GET',
+        url: '/get_income_details',
+        datatype: 'JSON',
+        success: function (result) {
+  for (i = 0; i < result.length; i++) {
     incValue.innerHTML += `
-    <div class="incValue" id="${details[i].id}">
-      <div id="incTitleName" class="inc"><p>${details[i].name}</p></div>
-      <div id="incValueAmount" class="inc"><p> <span>$ </span> ${details[i].number}</p></div>
+    <div class="incValue" id="${result[i].id}">
+      <div id="incTitleName" class="inc"><p>${result[i].name}</p></div>
+      <div id="incValueAmount" class="inc"><p> <span>$ </span> ${result[i].number}</p></div>
       <div id="edite_delete">
-        <p>
-          <button id="${details[i].id}" onclick="editIncDetails(${details[i].id})"> <img src="../image/edit.svg" width="15" alt=""  /></button> 
-          <button id="${details[i].id}" onclick="delIncomeDetails(${details[i].id})"><img src="../image/trash.svg" width="15" alt="" /></button>
+        <p id="buttons">
+          <button id="edit-income"> <img src="../image/edit.svg" width="15" class="${result[i].income_id}" alt=""  /> </button> 
+          <button id="delete-income"> <img src="../image/trash.svg" width="15" class="${result[i].income_amount}" alt="" /></button>
         </p>
       </div>
     </div>
   `;
   }
-  
+  id = result.length + 1;
+  details = result;
   displayIncomes.style.display = "block";
 }
 
 
 function delIncomeDetails(id) {
-  let index = details.findIndex((item) => item.id === id);
-  details.splice(index, 1);
-  displayInc(details);
+  userInc = { "id": id };
+
+    $.ajax({
+      type: 'POST',
+      url: '/delete_income',
+      contentType: 'application/json',
+      data: JSON.stringify(userInc)
+    });
+  displayInc();
 }
 
 function editIncDetails(id) {
   incomeForm.style.display = "none";
   budgetform.style.display = "none";
   editForm.style.display = "block";
-  details.findIndex((item) => {
-    if (item.id === id) {
-      editIncName.value = item.name;
-      editIncNumber.value = item.number;
-      saveEdit.children[2].id = item.id;
-      modal.style.display = "block";
-    }
-  });
+  saveEdit.children[2].id = item.id;
+  modal.style.display = "block";
+  }
+
 }
 
-function getIncValue(editIncName, editIncNumber, id) {
-  edited = details.findIndex((obj) => obj.id == id);
-  details[edited].name = editIncName;
-  details[edited].number = parseInt(editIncNumber);
-  displayInc(details);
+function getIncValue(editIncValue, editIncNumber, id) {
+  var userInc = {
+      id: id,
+      name: editIncValue,
+      number: editIncNumber,
+    };
+
+    console.log(JSON.stringify(userInc));
+
+    $.ajax(
+      {
+        type: 'POST',
+        url: '/update_income',
+        contentType: 'application/json',
+        data: JSON.stringify(userInc)
+      });
+
+  displayInc();
 }
 
 
 
 saveEdit.addEventListener("submit", (e) => {
   e.preventDefault();
-  getIncValue(editIncName.value, editIncNumber.value, saveEdit.children[2].id);
+  getIncValue(($("#editIncValue").val(), $("#editIncNumber").val(), saveEdit.children[2].id);
 });
 
 incForm.addEventListener("submit", (e) => {
   e.preventDefault();
   addIncomes(incName.value, incNumber.value);
 });
+  
+  
+  $(document).on("click", "#edit-income", (e) => {
+    e.preventDefault();
 
+    var num = $(e.target).attr('class');
+    editIncDetails(num);
+  });
+
+  $(document).on("click", "#delete-delete", (e) => {
+    e.preventDefault();
+
+    var num = $(e.target).attr('class');
+    delIncomeDetails(num);
+  });
+
+});
