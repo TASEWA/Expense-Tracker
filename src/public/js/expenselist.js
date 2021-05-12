@@ -105,6 +105,19 @@ $(document).ready(function () {
       });
 
     displayExpenses.style.display = "block";
+    totalExpense();
+  }
+
+  function totalExpense() {
+    $.ajax(
+      {
+        type: 'GET',
+        url: '/get_total_expense',
+        datatype: 'JSON',
+        success: function (result) {
+          console.log(result);
+        }
+      });
   }
 
   function delExpenseDetails(id) {
@@ -174,3 +187,4 @@ $(document).ready(function () {
     delExpenseDetails(num);
   });
 });
+
