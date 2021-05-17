@@ -22,6 +22,8 @@ cd src
 
 npm i 
 
+npm install mysql
+
 npm start
 
 go to http://localhost:8000/html/Welcome.html
@@ -46,7 +48,7 @@ go to http://localhost:8000/html/Welcome.html
 
 * Web Application technology
 * JavaScript
-* PostgreSQL
+* MySQL
 * Chart.js
 
 <h2> Check out our blogs for more information </h2>
